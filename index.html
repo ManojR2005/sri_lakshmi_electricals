@@ -63,22 +63,41 @@
       overflow: hidden;
     }
 
+    /* New Smooth Fade Slideshow */
     .slideshow-container {
-      display: flex;
-      width: calc(100vw * 8);
-      animation: slide 16s linear infinite;
+      position: relative;
+      width: 100vw;
+      height: 80vh;
+      overflow: hidden;
     }
 
     .slideshow-container img {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100vw;
       height: 80vh;
       object-fit: cover;
       filter: brightness(60%);
+      opacity: 0;
+      animation: fade 32s infinite;
     }
 
-    @keyframes slide {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-700vw); }
+    .slideshow-container img:nth-child(1) { animation-delay: 0s; }
+    .slideshow-container img:nth-child(2) { animation-delay: 4s; }
+    .slideshow-container img:nth-child(3) { animation-delay: 8s; }
+    .slideshow-container img:nth-child(4) { animation-delay: 12s; }
+    .slideshow-container img:nth-child(5) { animation-delay: 16s; }
+    .slideshow-container img:nth-child(6) { animation-delay: 20s; }
+    .slideshow-container img:nth-child(7) { animation-delay: 24s; }
+    .slideshow-container img:nth-child(8) { animation-delay: 28s; }
+
+    @keyframes fade {
+      0%   { opacity: 0; }
+      5%   { opacity: 1; }
+      25%  { opacity: 1; }
+      30%  { opacity: 0; }
+      100% { opacity: 0; }
     }
 
     .hero-overlay {
@@ -286,10 +305,10 @@
     <img src="2.jpg" alt="Electrical installation site 2">
     <img src="3.jpg" alt="Electrical installation site 3">
     <img src="4.jpg" alt="Electrical installation site 4">
-    <img src="1.jpg" alt="Electrical installation site 1 duplicate">
-    <img src="2.jpg" alt="Electrical installation site 2 duplicate">
-    <img src="3.jpg" alt="Electrical installation site 3 duplicate">
-    <img src="4.jpg" alt="Electrical installation site 4 duplicate">
+    <img src="1.jpg" alt="Repeat 1">
+    <img src="2.jpg" alt="Repeat 2">
+    <img src="3.jpg" alt="Repeat 3">
+    <img src="4.jpg" alt="Repeat 4">
   </div>
   <div class="hero-overlay">
     <div class="text-box">
@@ -353,5 +372,10 @@
     </div>
   </div>
 </section>
+
+<footer>
+  &copy; 2025 Sri Lakshmi Electricals. All rights reserved.
+</footer>
+
 </body>
 </html>
